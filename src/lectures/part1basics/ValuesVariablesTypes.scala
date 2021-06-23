@@ -26,5 +26,31 @@ object ValuesVariablesTypes extends App {
   var aVariable: Int = 4
   aVariable = 567 // can be reassigned. Is know as side effects
 
+  var i = 0
+  while (i < 10){
+    println(i)
+    i += 1
+  }
 
+  // avoid while loops
+  // EVERYTHING IN SCALA IS AN EXPRESSIONS
+
+  val aWeirdValue = {aVariable = 3} // Unit == void
+  println(aWeirdValue)
+
+
+  // side effects: println(), whiles, reassigning
+
+  // code blocks
+  // value of a block is the value of last expression in the block
+  // can have there own var, val inside the block
+  val aCodeBlock = {
+    val y = 2
+    val z = y + 1
+
+    var ifRes = if (z>2) "hello" else "goodbye"
+    println(ifRes)
+  }
+
+  //  val anotherValue = z +1 cannot use z outside the code blocks
 }
